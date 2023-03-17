@@ -1,0 +1,16 @@
+<header>
+    <p class="text-center mb-2 fs-1">users list</p>
+    <p class="fs-2">users in base:{{allUsers}} / downloaded users: {{users.length}}</p>
+</header>
+
+<div class="cards" #cards>
+    <div class="card" *ngFor="let user of users">
+        <div class="image">
+            <img src="{{user.profilPic}}" alt="">
+        </div>
+        <div class="description">
+            <p><b>fullName: </b><span>{{user.firstName}} </span><span>{{ user.lastName}} </span></p>        
+            <button routerLink="/details/{{user.id}}">show details</button>
+        </div>
+    </div>
+</div>

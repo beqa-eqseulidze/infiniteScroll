@@ -1,0 +1,37 @@
+
+    <header >
+        <div>
+            <!-- <p class="text-center mb-2 fs-1">friends list</p> -->
+            <p class="fs-2">all friends:{{user?.friendsId?.length}} / downloaded friends: {{friends.length}}</p>
+        </div>
+        <button routerLink="" class="btn btn-primary mt-2 mb-2">SHOW LIST</button>
+    </header>
+    <div class="cards">
+        <div class="card" >
+            <div class="image">
+                <img src="{{user?.profilPic}}" alt="">
+            </div>
+            <div class="description">
+                <p><b>fullName: </b><span>{{user?.firstName}} </span><span>{{ user?.lastName}} </span></p>        
+                <p><b>description:</b>
+                {{user?.description}}
+                </p>
+            </div>
+        </div>
+        
+
+    </div>
+
+
+<div class="cards" #cards>         
+        <div class="card"  *ngFor="let friend of friends">
+            <div class="image">
+                <img src="{{friend.profilPic}}" alt="">
+            </div>
+            <div class="description">
+                <p><b>fullName: </b><span>{{friend.firstName}} </span><span>{{ friend.lastName}} </span></p>        
+                <button (click)="details(friend.id)">show details</button>
+            </div>
+        </div>
+    
+</div>
